@@ -18,14 +18,50 @@
           <div class="form-group">
             <input type="text" class="form-control" formControlName='firstName' placeholder="FirstName">
           </div>
+          <div *ngIf='signupForm.controls["firstName"].invalid && 
+          (signupForm.controls["firstName"].dirty || signupForm.controls["firstName"].touched)'>
+          </div>
+          <div *ngIf='signupForm.controls["firstName"].errors.required'class="text-danger">
+            first Name is required 
+          </div>
+          <div *ngIf='signupForm.controls["firstName"].errors.minLenght'class="text-danger">
+            first Name must have at least 3 charactres
+          </div>
           <div class="form-group">
             <input type="text" class="form-control" formControlName='lastName' placeholder="LastName">
+          </div>
+          <div *ngIf='signupForm.controls["lastName"].invalid && 
+          (signupForm.controls["lastName"].dirty || signupForm.controls["lastName"].touched)'>
+          </div>
+          <div *ngIf='signupForm.controls["lasstName"].errors.required'class="text-danger">
+            last Name is required 
+          </div>
+          <div *ngIf='signupForm.controls["lastName"].errors.minLenght'class="text-danger">
+            last Name must have at least 3 charactres
           </div>
           <div class="form-group">
             <input type="text" class="form-control" formControlName='email' placeholder="Email">
           </div>
+          <div *ngIf='signupForm.controls["email"].invalid && 
+          (signupForm.controls["email"].dirty || signupForm.controls["email"].touched)'>
+          </div>
+          <div *ngIf='signupForm.controls["email"].errors.required'class="text-danger">
+            email is required 
+          </div>
+          <div *ngIf='signupForm.controls["email"].errors.email'class="text-danger">
+            email invalid
+          </div>
           <div class="form-group">
             <input type="text" class="form-control" formControlName='password' placeholder="Password">
+          </div>
+          <div *ngIf='signupForm.controls["password"].invalid && 
+          (signupForm.controls["password"].dirty || signupForm.controls["password"].touched)'>
+          </div>
+          <div *ngIf='signupForm.controls["password"].errors.required'class="text-danger">
+            password is required 
+          </div>
+          <div *ngIf='signupForm.controls["password"].errors.minLenght'class="text-danger">
+            password must have at least 8 charactres
           </div>
           <div class="form-group">
             <input type="text" class="form-control" formControlName='confirm' placeholder="Confirm">
