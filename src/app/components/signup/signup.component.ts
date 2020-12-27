@@ -7,11 +7,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  signupForm!:FormGroup;
+  
+   signupForm!:FormGroup  ;
+  constructor(private formBuilder:FormBuilder, ) { }
 
-  constructor(private formBuilder:FormBuilder) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.signupForm=this.formBuilder.group({
       firstName : ['',[Validators.minLength(3),Validators.required]],
       lastName  : ['',[Validators.minLength(3),Validators.required]],
@@ -20,8 +20,9 @@ export class SignupComponent implements OnInit {
       confirm   : ['']
     })
   }
-  signup(){
-    alert('Btn click');
+  signup(x:any){
+    console.log('here my object',x);
+    
    
      }
 }
